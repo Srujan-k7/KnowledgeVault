@@ -157,7 +157,7 @@ with fc:
     st.checkbox("Books", value=st.session_state.fetch_books_on, key="fetch_books_on")
     if "fetch_yt_on" not in st.session_state:
         st.session_state.fetch_yt_on = True
-        st.checkbox("YouTube", value=st.session_state.fetch_yt_on, key="fetch_yt_on")
+    st.checkbox("YouTube", value=st.session_state.fetch_yt_on, key="fetch_yt_on")
 
 
 st.markdown("""
@@ -168,7 +168,41 @@ st.markdown("""
     .btnSecondary > button:hover { filter:brightness(0.95); }
     </style>
     """, unsafe_allow_html=True)
-a,b =st.columns([0.2,1])
+st.markdown("""
+    <style>
+    /* Reduce spacing below inputs */
+    div.stTextInput, div.stNumberInput {
+        margin-bottom: 5px;
+        padding-bottom: 0px;
+    }
+
+    /* Style buttons */
+    div.stButton > button {
+        background-color: #4CAF50; /* Green */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    /* Hover effect */
+    div.stButton > button:hover {
+        background-color: #45a049;
+        transform: scale(1.05);
+    }
+
+    /* Put buttons closer to input */
+    .stButton {
+        margin-top: -5px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+a,b =st.columns([0.3,1])
 with a:
     st.markdown('<div class="btnPrimary">', unsafe_allow_html=True)
     fetch_and_save = st.button(" Fetch & Save in table")
