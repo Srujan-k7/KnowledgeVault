@@ -1,0 +1,7 @@
+[theme]
+base="light"
+primaryColor="#2EC4B6"             # Teal green
+backgroundColor="#F6FFF8"          # Soft mint background
+secondaryBackgroundColor="#CBF3F0" # Pastel aqua panels
+textColor="#1B1B1B"                # Deep gray text
+font="sans serif"
