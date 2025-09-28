@@ -48,11 +48,11 @@ def _ensure_state():
     ss.setdefault("form_tags", "")
 
     # manage/edit
-    ss.setdefault("manage_title", "")
-    ss.setdefault("manage_category", CATEGORY_OPTIONS[0] if CATEGORY_OPTIONS else "Other")
-    ss.setdefault("manage_link", "")
-    ss.setdefault("manage_notes", "")
-    ss.setdefault("manage_tags", "")
+    #ss.setdefault("manage_title", "")
+    # ss.setdefault("manage_category", CATEGORY_OPTIONS[0] if CATEGORY_OPTIONS else "Other")
+    # ss.setdefault("manage_link", "")
+    # ss.setdefault("manage_notes", "")
+    # ss.setdefault("manage_tags", "")
 
     # bulk ops
     ss.setdefault("bulk_selected_ids", [])
