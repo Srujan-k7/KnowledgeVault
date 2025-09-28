@@ -25,14 +25,14 @@ ensure_data_dir()
 
 def _ensure_state():
     ss = st.session_state
- 
+
+    # active tab
     ss.setdefault("active_tab", "Table View")
 
-   
+    # fetch settings
     ss.setdefault("fetch_query", "")
     ss.setdefault("fetch_count", 6)
-    if "fetch_books_on" not in st.session_state:
-        ss.setdefault("fetch_books_on", True)
+    ss.setdefault("fetch_books_on", True)
     ss.setdefault("fetch_yt_on", True)
 
     # inline search filters
@@ -56,6 +56,7 @@ def _ensure_state():
 
     # bulk ops
     ss.setdefault("bulk_selected_ids", [])
+
 
 _ensure_state()
 
@@ -152,12 +153,9 @@ with fb:
     st.number_input("Max per source", 1, 20, key="fetch_count")
 
 with fc:
-    if "fetch_books_on" not in st.session_state:
-        st.session_state.fetch_books_on = True
-    st.checkbox("Books", value=st.session_state.fetch_books_on, key="fetch_books_on")
-    if "fetch_yt_on" not in st.session_state:
-        st.session_state.fetch_yt_on = True
-    st.checkbox("YouTube", value=st.session_state.fetch_yt_on, key="fetch_yt_on")
+    st.checkbox("Books", key="fetch_books_on")
+    st.checkbox("YouTube", key="fetch_yt_on")
+
 
 
 st.markdown("""
